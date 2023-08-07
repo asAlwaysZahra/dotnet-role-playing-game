@@ -1,11 +1,11 @@
 ﻿using System.Security.Claims;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using WebApplication4.Data;
-using WebApplication4.Dtos.Character;
-using WebApplication4.Models;
+using RolePlayGame.Data;
+using RolePlayGame.Dtos.Character;
+using RolePlayGame.Models;
 
-namespace WebApplication4.Services;
+namespace RolePlayGame.Services;
 
 public class CharacterService : ICharacterService
 {

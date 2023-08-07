@@ -1,4 +1,4 @@
-namespace WebApplication4.Models;
+namespace RolePlayGame.Models;
 
 public class ErrorViewModel
 {

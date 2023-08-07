@@ -1,4 +1,4 @@
-﻿namespace WebApplication4.Dtos.User;
+﻿namespace RolePlayGame.Dtos.User;
 
 public class UserLoginDto
 {

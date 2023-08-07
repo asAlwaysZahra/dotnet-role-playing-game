@@ -1,11 +1,11 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication4.Dtos.Character;
-using WebApplication4.Models;
-using WebApplication4.Services;
+using RolePlayGame.Dtos.Character;
+using RolePlayGame.Models;
+using RolePlayGame.Services;
 
-namespace WebApplication4.Controllers;
+namespace RolePlayGame.Controllers;
 
 [Authorize]
 [ApiController]

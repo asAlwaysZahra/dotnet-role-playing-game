@@ -1,6 +1,6 @@
-﻿using WebApplication4.Models;
+﻿using RolePlayGame.Models;
 
-namespace WebApplication4.Dtos.Character;
+namespace RolePlayGame.Dtos.Character;
 
 public class AddCharacterDto
 {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebApplication4.Models;
+using RolePlayGame.Models;
 
-namespace WebApplication4.Data;
+namespace RolePlayGame.Data;
 
 public class DataContext : DbContext
 {

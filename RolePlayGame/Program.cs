@@ -2,8 +2,8 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using WebApplication4.Data;
-using WebApplication4.Services;
+using RolePlayGame.Data;
+using RolePlayGame.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using WebApplication4.Dtos.Character;
-using WebApplication4.Models;
+using RolePlayGame.Dtos.Character;
+using RolePlayGame.Models;
 
-namespace WebApplication4;
+namespace RolePlayGame;
 
 public class AutoMapperProfile : Profile
 {

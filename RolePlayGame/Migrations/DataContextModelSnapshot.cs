@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebApplication4.Data;
+using RolePlayGame.Data;
 
 #nullable disable
 
@@ -21,7 +21,7 @@ namespace WebApplication4.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("WebApplication4.Models.Character", b =>
+            modelBuilder.Entity("RolePlayGame.Models.Character", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -58,7 +58,7 @@ namespace WebApplication4.Migrations
                     b.ToTable("Characters");
                 });
 
-            modelBuilder.Entity("WebApplication4.Models.User", b =>
+            modelBuilder.Entity("RolePlayGame.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -83,9 +83,9 @@ namespace WebApplication4.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("WebApplication4.Models.Character", b =>
+            modelBuilder.Entity("RolePlayGame.Models.Character", b =>
                 {
-                    b.HasOne("WebApplication4.Models.User", "User")
+                    b.HasOne("RolePlayGame.Models.User", "User")
                         .WithMany("Characters")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -94,7 +94,7 @@ namespace WebApplication4.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("WebApplication4.Models.User", b =>
+            modelBuilder.Entity("RolePlayGame.Models.User", b =>
                 {
                     b.Navigation("Characters");
                 });

@@ -5,9 +5,9 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
-using WebApplication4.Models;
+using RolePlayGame.Models;
 
-namespace WebApplication4.Data;
+namespace RolePlayGame.Data;
 
 public class AuthRepository : IAuthRepository
 {

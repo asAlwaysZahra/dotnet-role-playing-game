@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication4.Data;
-using WebApplication4.Dtos.User;
-using WebApplication4.Models;
+using RolePlayGame.Data;
+using RolePlayGame.Dtos.User;
+using RolePlayGame.Models;
 
-namespace WebApplication4.Controllers;
+namespace RolePlayGame.Controllers;
 
 [ApiController]
 [Route("[controller]")]

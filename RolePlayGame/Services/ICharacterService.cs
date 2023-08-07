@@ -1,7 +1,7 @@
-﻿using WebApplication4.Dtos.Character;
-using WebApplication4.Models;
+﻿using RolePlayGame.Dtos.Character;
+using RolePlayGame.Models;
 
-namespace WebApplication4.Services;
+namespace RolePlayGame.Services;
 
 public interface ICharacterService
 {
