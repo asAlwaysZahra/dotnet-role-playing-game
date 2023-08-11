@@ -1,4 +1,6 @@
-﻿namespace RolePlayGame.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace RolePlayGame.Models;
 
 public class User
 {
@@ -7,4 +9,5 @@ public class User
     public byte[] PasswordHash { get; set; }
     public byte[] PasswordSalt { get; set; }
     public List<Character> Characters { get; set; }
+    [Required] public string Role { get; set; }
 }

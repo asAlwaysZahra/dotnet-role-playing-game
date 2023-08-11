@@ -5,7 +5,9 @@ namespace RolePlayGame.Data;
 
 public class DataContext : DbContext
 {
-    public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+    public DataContext(DbContextOptions<DataContext> options) : base(options)
+    {
+    }
 
     public DbSet<Character> Characters { get; set; }
     public DbSet<User> Users { get; set; }
@@ -17,5 +19,8 @@ public class DataContext : DbContext
     {
         modelBuilder.Entity<CharacterSkill>()
             .HasKey(cs => new { cs.CharacterId, cs.SkillId });
+
+        modelBuilder.Entity<User>()
+            .Property(user => user.Role).HasDefaultValue("Player");
     }
 }
