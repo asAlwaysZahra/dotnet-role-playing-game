@@ -22,13 +22,22 @@ public class CharacterService : ICharacterService
 
     public async Task<ServiceResponse<List<GetCharacterDto>>> GetAllCharacters()
     {
-        ServiceResponse<List<GetCharacterDto>> serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
-        List<Character> dbCharacters = await _context.Characters
-            .Include(c => c.Weapon)
-            .Include(c => c.CharacterSkills).ThenInclude(cs => cs.Skill)
-            .Where(c => c.User.Id == GetUserId()).ToListAsync();
-        serviceResponse.Data = dbCharacters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
-        return serviceResponse;
+        ServiceResponse<List<GetCharacterDto>> response = new ServiceResponse<List<GetCharacterDto>>();
+        List<Character> dbCharacters = new List<Character>();
+
+        if (GetUserRole() == "Admin")
+            dbCharacters = await _context.Characters
+                .Include(c => c.Weapon)
+                .Include(c => c.CharacterSkills).ThenInclude(cs => cs.Skill)
+                .Where(c => c.User.Id == GetUserId()).ToListAsync();
+        else if (GetUserRole() == "Player")
+            dbCharacters = await _context.Characters
+                .Include(c => c.Weapon)
+                .Include(c => c.CharacterSkills).ThenInclude(cs => cs.Skill)
+                .ToListAsync();
+
+        response.Data = dbCharacters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
+        return response;
     }
 
     public async Task<ServiceResponse<GetCharacterDto>> GetCharacterById(int id)
@@ -129,4 +138,7 @@ public class CharacterService : ICharacterService
 
     private int GetUserId() =>
         int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+    private string GetUserRole() =>
+        _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Role);
 }
