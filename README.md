@@ -1,8 +1,8 @@
-# dotnet-role-play-game
+# dotnet-role-playing-game
 
-ASP.Net core practise project
+just an ASP.Net core practise project
 
-Project Features  Summary:
+<h2> Project Features  Summary: </h2>
 
 - Created first Web API with .NET Core 3.1 with all CRUD operations: Create, Read, Update and Delete using Entity Framework Core.
 
