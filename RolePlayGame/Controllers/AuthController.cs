@@ -19,7 +19,7 @@ public class AuthController : ControllerBase
     [HttpPost("Register")]
     public async Task<IActionResult> Register(UserRegisterDto request)
     {
-        User user = new User() { Username = request.Username };
+        User user = new User() { Username = request.Username, Role = request.Role};
         ServiceResponse<int> response = await _authRepo.Register(user, request.Password);
 
         if (!response.Success)
